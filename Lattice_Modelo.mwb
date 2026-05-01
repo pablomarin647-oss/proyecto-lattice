@@ -1,0 +1,5 @@
+SELECT d.id_deteccion, a.tipo, a.nivel_peligro, d.latitud, d.longitud
+FROM deteccion d
+INNER JOIN amenaza a ON d.id_amenaza = a.id_amenaza
+WHERE d.confirmada = TRUE
+AND a.nivel_peligro IN ('Alto', 'Critico');
